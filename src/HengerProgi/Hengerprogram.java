@@ -14,7 +14,16 @@ public class Hengerprogram {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Mertanihenger  h1=new TomorHenger(5.0, 4.0);
+        Mertanihenger  h2=new TomorHenger(3.0, 5.0, 10.0);
+        Mertanihenger  h3=new Cso(2.5, 5.0, 10.0);
+        Mertanihenger  h4=new Cso(2.0, 5.0, 10.0, 20.0);
+        
+        System.out.println(h1);
+        System.out.println(h2);
+        System.out.println(h3);
+        System.out.println(h4);
+        
     }
     
 }
