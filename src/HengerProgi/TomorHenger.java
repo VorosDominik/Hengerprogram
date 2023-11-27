@@ -24,15 +24,18 @@ public class TomorHenger extends Mertanihenger{
     public double getFajsuly() {
         return fajsuly;
     }
-    public double suly(){
-    
-        return 0;
-    
-    } 
+    @Override
+    public double terfogat() {
+        return Math.PI * Math.pow(getSugar(), 2) * getMagasag();
+    }
+
+    public double suly() {
+        return terfogat() * fajsuly;
+    }
 
     @Override
     public String toString() {
-        return "TomorHenger{" + "fajsuly=" + fajsuly +super.toString()+ '}';
+        return "TomorHenger{" + " fajsuly=" + fajsuly +super.toString()+ "terfogata= " +terfogat()+" sulya= "+ suly()+ '}';
     }
     
     

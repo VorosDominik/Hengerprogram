@@ -11,11 +11,23 @@ package HengerProgi;
 public class Mertanihenger {
     private static int hengerdb=0;
     private double sugar,magasag;
+    private static double AT=0,OSZFOGAT=0;
+
+    public static double getAT() {
+        return AT;
+    }
+
+    public static double getOSZFOGAT() {
+        return OSZFOGAT;
+    }
+    
 
     public Mertanihenger(double sugar, double magasag) {
         this.sugar = sugar;
         this.magasag = magasag;
         hengerdb++;
+        OSZFOGAT+=terfogat();
+        AT=OSZFOGAT/Mertanihenger.getHengerdb();
     }
 
     public static int getHengerdb() {
@@ -33,6 +45,7 @@ public class Mertanihenger {
     
         return 0;
     }
+    
 
     @Override
     public String toString() {

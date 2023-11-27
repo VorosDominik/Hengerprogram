@@ -10,29 +10,48 @@ package HengerProgi;
  */
 public class Cso extends TomorHenger{
     private double falvastagsag;
+    static double csovekoszsuly=0;
 
     public Cso(double falvastagsag, double fajsuly, double sugar, double magasag) {
         super(fajsuly, sugar, magasag);
         this.falvastagsag = falvastagsag;
+        csovekoszsuly+=suly();
     }
 
     public Cso(double falvastagsag, double sugar, double magasag) {
-        super(sugar, magasag);
-        this.falvastagsag = falvastagsag;
+        this(falvastagsag,1.0, sugar, magasag);
+      
     }
+
+    public static double getCsovekoszsuly() {
+        return csovekoszsuly;
+    }
+    
 
     public double getFalvastagsag() {
         return falvastagsag;
     }
+    public String szoveg(){
+       String szov= super.toString().replace("TomorHenger", "");
+       szov=szov.replace("{", "");
+       szov=szov.replace("}", "");
+        
+        
+        return szov;
+    }
 
     @Override
     public double terfogat() {
-        return super.terfogat(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return (Math.PI * Math.pow(getSugar(), 2) * getMagasag()) -(Math.PI * Math.pow((getSugar()-falvastagsag), 2) * getMagasag());
+    }
+
+    public double suly() {
+        return terfogat() * getFajsuly();
     }
 
     @Override
     public String toString() {
-        return "Cso{" + "falvastagsag=" + falvastagsag +super.toString().replace("TomorHenger", "") + '}';
+        return "Cso{" + "falvastagsag=" + falvastagsag +szoveg() + '}';
     }
     
     

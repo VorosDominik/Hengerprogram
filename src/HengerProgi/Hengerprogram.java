@@ -23,6 +23,10 @@ public class Hengerprogram {
         System.out.println(h2);
         System.out.println(h3);
         System.out.println(h4);
+        System.out.println("Enyi henger van : "+ TomorHenger.getHengerdb());
+        System.out.println("Enyi a csovek sulya : " +Cso.getCsovekoszsuly());
+          System.out.println("Ösztérfogata a hengereknek : "+ TomorHenger.getAT());
+        
         
     }
     
